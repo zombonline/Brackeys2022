@@ -49,10 +49,7 @@ public class EnemyMovement : MonoBehaviour
         {
             agent.SetDestination(randomPosition.position);
         }
-        else
-        {
-            Move();
-        }
+        
     }
 
     private void OnDrawGizmos()
