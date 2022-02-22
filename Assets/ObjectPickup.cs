@@ -44,7 +44,7 @@ public class ObjectPickup : MonoBehaviour
         }
         else
         {
-            if (currentObject == null && hitInfo.collider.CompareTag("Interactable"))
+            if (currentObject == null && hitInfo.collider !=null && hitInfo.collider.CompareTag("Interactable"))
             {
                 Debug.Log(hitInfo.collider.name);
                 currentObject = hitInfo.collider.GetComponent<Rigidbody>();
