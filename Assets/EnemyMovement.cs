@@ -10,6 +10,16 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Transform enemyPoint;
     [SerializeField] float wanderRadius;
 
+    public void StopMoving()
+    {
+        agent.isStopped = true;
+    }
+
+    public void ContinueMoving()
+    {
+        agent.isStopped = false;
+    }
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
