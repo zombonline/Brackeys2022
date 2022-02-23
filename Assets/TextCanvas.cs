@@ -9,18 +9,15 @@ public class TextCanvas : MonoBehaviour
     [SerializeField] TextAsset textFile;
     Canvas canvas;
     bool textSkipped = false;
+    public Canvas buttonCanvas;
     private void Awake()
     {
         canvas = GetComponent<Canvas>();
-        StartCoroutine(delete());
     }
-    IEnumerator delete()
-    {
-        yield return new WaitForSeconds(2f);
-        EnableCanvas("Hamster", textFile);
-    }
+
     public void EnableCanvas(string charNameText, TextAsset charSpeechText)
     {
+        ResetCanvas();
         textFile = charSpeechText;
         CursorController.CursorShow();
         FindObjectOfType<PlayerInput>().SwitchCurrentActionMap("UI");
@@ -41,7 +38,17 @@ public class TextCanvas : MonoBehaviour
     {
         CursorController.CursorHide();
         FindObjectOfType<PlayerInput>().SwitchCurrentActionMap("Movement");
+        ResetCanvas();
+    }
+
+    private void ResetCanvas()
+    {
         canvas.enabled = false;
+        if (buttonCanvas != null)
+        {
+            buttonCanvas.enabled = false;
+            buttonCanvas = null;
+        }
         charSpeech.text = null;
 
     }

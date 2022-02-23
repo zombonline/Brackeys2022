@@ -44,15 +44,22 @@ public class ObjectPickup : MonoBehaviour
         }
         else
         {
-            if (currentObject == null && hitInfo.collider !=null && hitInfo.collider.CompareTag("Interactable"))
+            if (currentObject == null && hitInfo.collider !=null )
             {
-                Debug.Log(hitInfo.collider.name);
-                currentObject = hitInfo.collider.GetComponent<Rigidbody>();
-                currentObject.gameObject.AddComponent<FixedJoint>();
-                currentObject.GetComponent<FixedJoint>().connectedMassScale = 0.1f;
-                currentObject.GetComponent<FixedJoint>().massScale = 0.1f;
-                currentObject.GetComponent<FixedJoint>().connectedBody = raycastEnd.GetComponent<Rigidbody>();
-                currentObject.useGravity = false;
+                if (hitInfo.collider.CompareTag("Interactable"))
+                {
+                    Debug.Log(hitInfo.collider.name);
+                    currentObject = hitInfo.collider.GetComponent<Rigidbody>();
+                    currentObject.gameObject.AddComponent<FixedJoint>();
+                    currentObject.GetComponent<FixedJoint>().connectedMassScale = 0.1f;
+                    currentObject.GetComponent<FixedJoint>().massScale = 0.1f;
+                    currentObject.GetComponent<FixedJoint>().connectedBody = raycastEnd.GetComponent<Rigidbody>();
+                    currentObject.useGravity = false;
+                }
+                else if(hitInfo.collider.CompareTag("Readable"))
+                {
+                    hitInfo.collider.GetComponent<ReadableItem>().Interact();
+                }
             }
         }
     }
