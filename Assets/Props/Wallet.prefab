@@ -167,10 +167,10 @@ RectTransform:
   m_Father: {fileID: 8528490975316103132}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374.09988, y: -495.02002}
-  m_SizeDelta: {x: 311.2047, y: 58.350883}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 374.09988, y: 44.97998}
+  m_SizeDelta: {x: 311.2047, y: 58.35089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &759427265139566388
 CanvasRenderer:
@@ -297,10 +297,10 @@ RectTransform:
   m_Father: {fileID: 8528490975316103132}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.89494, y: -495.02002}
-  m_SizeDelta: {x: 311.2047, y: 58.350883}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 62.89494, y: 44.97998}
+  m_SizeDelta: {x: 311.2047, y: 58.35089}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8470026605995879499
 CanvasRenderer:
@@ -393,6 +393,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2913562052957033284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1836492410864964304}
+  m_Layer: 0
+  m_Name: Spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1836492410864964304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913562052957033284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4835200603944607782}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3178367609639103333
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +689,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 8528490975316103132}
+  - {fileID: 1836492410864964304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -736,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wallet
   textFile: {fileID: 4900000, guid: f8a9013a528fdf04d801b929f8b4cb03, type: 3}
+  buttonCanvas: {fileID: 9001965570323553682}
 --- !u!114 &6125560728501582644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,3 +783,5 @@ MonoBehaviour:
   maxItemsCanSpawn: 4
   itemToSpawn: {fileID: 2002261863508884598, guid: 663372b9bfc05994d9c5a08fc654c6a1,
     type: 3}
+  nothingToSpawnText: {fileID: 4900000, guid: 6196291f4b61abf4cae9fa15d5e31d61, type: 3}
+  spawnPoint: {fileID: 1836492410864964304}
